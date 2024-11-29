@@ -1,9 +1,22 @@
-import example.pepita
+import aparatos.*
+import pacientes.*
 
-describe "group of tests for pepita" {
+describe "Test parte 1" {
+  const milena = new Paciente(edad=3, dolor= 30, fortalezaMuscular=50)
+  const leonardo = new Paciente (edad=40, dolor=10, fortalezaMuscular= 20)
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  const bici = new Bicicleta()
+  const mini = new Minitramp()
+  const mag = new Magneto()
+
+  test "Leonardo puede usar los tres aparatos creados" {
+    assert.that(leonardo.puedeUsar(bici))
+    //assert.that(leonardo.puedeUsar(mini))
+    assert.that(leonardo.puedeUsar(mag))
   }
 
+  test "Milena puede usar sólo el magneto." {
+    assert.that(milena.puedeUsar(mag))
+    assert.notThat(milena.puedeUsar(bici))
+  }
 }
