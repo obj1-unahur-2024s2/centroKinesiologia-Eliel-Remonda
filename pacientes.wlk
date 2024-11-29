@@ -58,8 +58,8 @@ class Caprichoso inherits Paciente{
 
   override method realizarRutina() {
     if (self.hayAlgunAparatoDeColorRojo()){
-      rutina.forEach({a => self.usarAparato(a)})
-      rutina.forEach({a => self.usarAparato(a)})
+      super()
+      super()
     }
   }
 }
